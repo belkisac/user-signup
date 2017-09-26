@@ -1,19 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h1>Signup</h1>
+
 <form method='post'>
-    <label for='username'>Username:
+    <p><label for='username'>Username:
         <input type='text' name='username' />
-    </label>
-    <label for='password'>Password:
+        <span>{{username_error}}</span>
+    </label></p>
+    <p><label for='password'>Password:
         <input type='password' name='password' />
-    </label>
-    <label for='verify-password'>Verify Password:
+        <span>{{password_error}}</span>
+    </label></p>
+    <p><label for='verify-password'>Verify Password:
         <input type='password' name='verify-password' />
-    </label>
-    <label for='email'>Email (Optional):
+        <span>{{verify_error}}</span>
+    </label></p>
+    <p><label for='email'>Email (Optional):
         <input type='text' name='email' />
-    </label>
+        <span>{{email_error}}</span>
+    </label></p>
     <input type='submit' value='Submit' />
 
 </form>
