@@ -29,10 +29,13 @@ def validate_info():
     if len(password) < 3 or len(password) > 20 or password == '' or ' ' in password:
         password_error = "That's not a valid password"
 
-    if password2 != password:
-        verify_error = "Passwords don't match"
+        if password2 != password or password2 == '':
+            verify_error = "Passwords don't match"
     
     if email != '':
+        if len(email) < 3 or len(email) > 20:
+            email_error = "Please enter a valid email address"
+            email = ''
         if '@' not in email or '.' not in email:
             email_error = "Please enter a valid email address"
             email = ''
